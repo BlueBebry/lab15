@@ -31,6 +31,26 @@ class Rectangle extends Figure implements ShapeInterface {
     }
 }
 
+class Square extends Figure implements ShapeInterface {
+    private $a;
+
+    public function __construct($a) {
+        $this->a = $a;
+        $this->sidesCount = 4;
+    }
+
+    public function getArea() {
+        $this->area = $this->a * $this->a;
+        return $this->area;
+    }
+
+    public function infoAbout() {
+        return "Это класс квадрата. У него {$this->sidesCount} стороны.";
+    }
+}
+
 $rect1 = new Rectangle(5, 10);
 echo "Задание 1. " . "Площадь прямоугольника: " . $rect1->getArea();
+$sq1 = new Square(5);
+echo "<br>Задание 2. " . "Площадь квадрата: " . $sq1->getArea();
 ?>
